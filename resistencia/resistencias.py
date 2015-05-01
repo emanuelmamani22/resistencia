@@ -22,7 +22,41 @@ class Resistencias : #Comienza la clase
         return a
 #Termina la clase
 
-def iteracionr (a):
+def colores (e): #Funcion colores con los colores de las resistencias comerciales
+    e=e
+    if e ==  ['1','0'] :
+        print 'Marron-Negro',#
+    elif e == ['1','2'] :
+        print 'Marron-Rojo',#
+    elif e == ['1','5'] :
+        print 'Marron-Verde',#
+    elif e == ['1','8'] :
+        print 'Marron-Gris',#
+    elif e == ['2','2'] :
+        print 'Rojo-Rojo',#
+    elif e == ['2','7'] :
+        print 'Rojo-Violeta',#
+    elif e == ['3','3'] :
+        print 'Naranja-Naranja',#
+    elif e == ['3','9'] :
+        print 'Naranja-Blanco',#
+    elif e == ['4','7'] :
+        print 'Amarillo-Violeta',#
+    elif e == ['5','6'] :
+        print 'Verde-Azul',#
+    elif e == ['6','8'] :
+        print 'Azul-Gris',#
+    elif e == ['8','2'] :
+        print  'Gris-Rojo',#
+    elif e == ['9','1'] :
+        print 'Blanco-Marron',#
+    else  :
+        print 'El numero ingresado no es parte del los valores comerciales de las resistencia'
+        menu()
+        
+
+def iteracionr (a): #Funcion itaracion
+    R=Resistencias()
     a=a
     cont=0
     b=[]
@@ -35,7 +69,29 @@ def iteracionr (a):
             b.append(i)
         cont=cont+1
     R.setcolor3(b)
-        
-R=Resistencias() #Aqui comienza el programa principal
-a=raw_input("Ingrese el valor de la recistencia: ")
-iteracionr(a)
+    
+    cont2=0
+    r=[]
+    while cont2 < 2 :
+        if cont2 == 0 :
+            e=R.getcolor1()
+            r.append(e)
+        elif cont2 == 1 :
+            e=R.getcolor2()
+            r.append(e)
+        cont2=cont2+1
+    
+    colores(r)
+   
+def menu ( ):
+    a=raw_input("Ingrese el valor de la recistencia: ")
+    iteracionr(a)
+
+
+menu()
+
+
+
+
+
+
